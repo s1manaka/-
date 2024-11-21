@@ -23,7 +23,7 @@ body {
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 15%; /* さらに下へ移動 */
+    bottom: 10%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -84,7 +84,7 @@ body {
 #game-area {
     position: relative;
     width: 100%;
-    height: 80%; /* ゲームエリアを少し縮小してカゴを含める */
+    height: 60%; /* ゲームエリアを少し縮小してカゴを含める */
     overflow: hidden;
 }
 
