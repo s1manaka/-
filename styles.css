@@ -22,14 +22,14 @@ body {
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 30%; /* さらに下へ移動 */
+    bottom: 5%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
 
 .notice {
     position: absolute;
-    bottom: 10%; /* PLAYボタンよりもさらに下に移動 */
+    bottom: 0%; /* PLAYボタンよりもさらに下に移動 */
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9em;
@@ -107,7 +107,7 @@ body {
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 0%; /* 少し上へ移動 */
+    bottom: 30%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -159,3 +159,4 @@ body {
         top: 110%;
     }
 }
+
