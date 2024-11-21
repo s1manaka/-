@@ -14,7 +14,7 @@ body {
     position: absolute;
     top: -5%; /* 全体を少し上に移動 */
     left: 0;
-    width: 90%; /* 横幅を全体に設定 */
+    width: 100%; /* 横幅を全体に設定 */
     height: 100%; /* 高さを画面を少し超えるように調整 */
     object-fit: cover; /* アスペクト比を維持しつつ画面を埋める */
     z-index: -1; /* 背景として表示 */
@@ -23,7 +23,7 @@ body {
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 5%; /* さらに下へ移動 */
+    bottom: 15%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -99,7 +99,7 @@ body {
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 70%; /* 少し上へ移動 */
+    bottom: 15%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
