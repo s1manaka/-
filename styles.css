@@ -1,5 +1,6 @@
 /* 全体の背景色 */
 body {
+    height: 100%; 
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -22,14 +23,14 @@ body {
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 3%; /* さらに下へ移動 */
+    bottom: 8%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
 
 .notice {
     position: absolute;
-    bottom: 1%; /* PLAYボタンよりもさらに下に移動 */
+    bottom: 3%; /* PLAYボタンよりもさらに下に移動 */
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9em;
@@ -107,7 +108,7 @@ body {
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 70%; /* 少し上へ移動 */
+    bottom: 20%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
