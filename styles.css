@@ -30,7 +30,7 @@ body {
 
 .notice {
     position: absolute;
-    bottom: 3%; /* PLAYボタンよりもさらに下に移動 */
+    bottom: 1%; /* PLAYボタンよりもさらに下に移動 */
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9em;
