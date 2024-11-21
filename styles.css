@@ -11,21 +11,22 @@ body {
 /* 背景画像全体 */
 .background {
     position: absolute;
-    top: -10%; /* 表示位置を上げる */
+    top: -5%; /* 全体を少し上に移動 */
     left: 0;
-    width: 100%;
-    height: 100%; /* 全体を少し大きく設定 */
+    width: 100%; /* 横幅を全体に設定 */
+    height: 110%; /* 高さを画面を少し超えるように調整 */
     object-fit: cover; /* アスペクト比を維持しつつ画面を埋める */
     z-index: -1; /* 背景として表示 */
 }
 
-/* タイトル画面のPLAYボタン */
+/* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 8%; /* さらに下へ配置 */
+    bottom: 5%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
+
 
 /* ボタンのスタイル */
 .styled-button {
@@ -82,22 +83,22 @@ body {
 #game-area {
     position: relative;
     width: 100%;
-    height: 80%; /* 高さを少し縮小 */
+    height: 85%; /* ゲームエリアを少し縮小してカゴを含める */
     overflow: hidden;
 }
 
 /* カゴの位置とサイズ */
 #basket {
     position: absolute;
-    bottom: 20%; /* カゴを上に移動 */
-    width: 16%;
+    bottom: 10%; /* カゴの位置そのまま */
+    width: 16%; /* サイズを小さく */
     transition: left 0.2s;
 }
 
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 15%; /* ボタンを画面の上方に移動 */
+    bottom: 30%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -149,3 +150,4 @@ body {
         top: 110%;
     }
 }
+
