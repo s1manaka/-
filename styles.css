@@ -11,46 +11,25 @@ body {
 /* 背景画像全体 */
 .background {
     position: absolute;
-    top: 0;
+    top: -5%; /* 全体を少し上に移動 */
     left: 0;
     width: 100%; /* 横幅を全体に設定 */
-    height: 100%; /* 高さを全体に設定 */
+    height: 110%; /* 高さを画面を少し超えるように調整 */
     object-fit: cover; /* アスペクト比を維持しつつ画面を埋める */
     z-index: -1; /* 背景として表示 */
-}
-
-/* 終了画面テキスト */
-.end-title {
-    color: white; /* 文字色を白に設定 */
-    font-size: 2.5em; /* 見やすい大きさに調整 */
-    margin-top: 20px;
-}
-
-.end-score {
-    color: white; /* スコア結果も白に設定 */
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-/* ボタン間の間隔調整 */
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* ボタン間のスペース */
-    margin-top: 20px;
 }
 
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 15%; /* 画面下部に配置 */
+    bottom: 12%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
 
 .notice {
     position: absolute;
-    bottom: 3%; /* PLAYボタンの下に配置 */
+    bottom: 5%; /* PLAYボタンよりもさらに下に移動 */
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9em;
@@ -80,6 +59,27 @@ body {
     background-color: #ffcfe8;
 }
 
+/* 終了画面テキスト */
+.end-title {
+    color: white;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+.end-score {
+    color: white;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+/* ボタン間の間隔調整 */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* ボタン間のスペース */
+    margin-top: 20px;
+}
+
 /* ゲーム画面のサイズをスマホ縦画面に合わせる */
 #game-screen {
     position: relative;
@@ -99,22 +99,30 @@ body {
 /* カゴの位置とサイズ */
 #basket {
     position: absolute;
-    bottom: 10%; /* 少し下に配置 */
+    bottom: 10%; /* カゴの位置そのまま */
     width: 16%; /* サイズを小さく */
     transition: left 0.2s;
 }
 
-/* 落下物のサイズ */
-.falling-object {
+/* 矢印ボタンの位置調整 */
+#controls {
     position: absolute;
-    width: 10%; /* 小さく調整 */
-    animation: fall linear;
+    bottom: 10%; /* 少し上へ移動 */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#left-button, #right-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
 /* スコアとタイマー */
 #score-display, #timer {
     position: absolute;
-    top: 10px;
+    top: 5px; /* 少し上へ移動 */
     color: white;
     font-size: 1.5em;
     background: rgba(0, 0, 0, 0.5);
@@ -130,24 +138,16 @@ body {
     right: 10px;
 }
 
-/* カゴ操作ボタン */
-#controls {
-    position: absolute;
-    bottom: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#left-button, #right-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
 /* 隠し要素 */
 .hidden {
     display: none !important;
+}
+
+/* 落下物のサイズ */
+.falling-object {
+    position: absolute;
+    width: 10%; /* 小さく調整 */
+    animation: fall linear;
 }
 
 /* 落下物のアニメーション */
@@ -159,4 +159,3 @@ body {
         top: 110%;
     }
 }
-
