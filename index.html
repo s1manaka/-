@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>セオさんのりんご集め</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- タイトル画面 -->
+    <div id="title-screen">
+        <img src="haikei.png" alt="背景" class="background">
+        <button id="play-button" class="styled-button">PLAY</button>
+        <p class="notice">注意<br>このゲームは細胞神曲 -Cell of Empireo- の二次創作ゲームとなっています。</p>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game-screen" class="hidden">
+        <img src="haikeigame.png" alt="ゲーム背景" class="background">
+        <div id="score-display">スコア:000</div>
+        <div id="timer">01:00</div>
+        <div id="game-area"></div>
+        <img id="basket" src="seodoa.png" alt="カゴ">
+        <div id="controls">
+            <button id="left-button" class="styled-button">←</button>
+            <button id="right-button" class="styled-button">→</button>
+        </div>
+    </div>
+
+    <!-- ゲーム終了画面 -->
+    <div id="end-screen" class="hidden">
+        <h1 class="end-title">FINISH！</h1>
+        <p id="final-score" class="end-score"></p>
+        <div class="button-group">
+            <button id="reset-button" class="styled-button">リセット</button>
+            <button id="return-button" class="styled-button">タイトルへ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
