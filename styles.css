@@ -13,8 +13,8 @@ body {
     position: absolute;
     top: -5%; /* 全体を少し上に移動 */
     left: 0;
-    width: 100%; /* 横幅を全体に設定 */
-    height: 110%; /* 高さを画面を少し超えるように調整 */
+    width: 90%; /* 横幅を全体に設定 */
+    height: 100%; /* 高さを画面を少し超えるように調整 */
     object-fit: cover; /* アスペクト比を維持しつつ画面を埋める */
     z-index: -1; /* 背景として表示 */
 }
@@ -22,7 +22,7 @@ body {
 /* タイトル画面のPLAYボタンと注意 */
 #play-button {
     position: absolute;
-    bottom: 5%; /* さらに下へ移動 */
+    bottom: 8%; /* さらに下へ移動 */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -90,7 +90,7 @@ body {
 /* カゴの位置とサイズ */
 #basket {
     position: absolute;
-    bottom: 10%; /* カゴの位置そのまま */
+    bottom: 20%; /* カゴの位置そのまま */
     width: 16%; /* サイズを小さく */
     transition: left 0.2s;
 }
@@ -98,7 +98,7 @@ body {
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 30%; /* 少し上へ移動 */
+    bottom: 20%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
