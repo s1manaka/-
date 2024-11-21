@@ -28,16 +28,6 @@ body {
     transform: translateX(-50%);
 }
 
-.notice {
-    position: absolute;
-    bottom: 1%; /* PLAYボタンよりもさらに下に移動 */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9em;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
 /* ボタンのスタイル */
 .styled-button {
     background-color: white;
