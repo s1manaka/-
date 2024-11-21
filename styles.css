@@ -14,8 +14,8 @@ body {
     position: absolute;
     top: -5%; /* 全体を少し上に移動 */
     left: 0;
-    width: 100%; /* 横幅を全体に設定 */
-    height: 100%; /* 高さを画面を少し超えるように調整 */
+    width: 110%; /* 横幅を全体に設定 */
+    height: 110%; /* 高さを画面を少し超えるように調整 */
     object-fit: cover; /* アスペクト比を維持しつつ画面を埋める */
     z-index: -1; /* 背景として表示 */
 }
@@ -99,7 +99,7 @@ body {
 /* 矢印ボタンの位置調整 */
 #controls {
     position: absolute;
-    bottom: 15%; /* 少し上へ移動 */
+    bottom: 20%; /* 少し上へ移動 */
     width: 100%;
     display: flex;
     justify-content: space-around;
