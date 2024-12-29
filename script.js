@@ -122,59 +122,62 @@ document.addEventListener('DOMContentLoaded', () => {
         timerDisplay.textContent = `0${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
 
-    function spawnObject() {
-        // ランダムにレーンを選択
-        const lane = Math.floor(Math.random() * totalLanes);
+   function spawnObject() {
+    // ランダムにレーンを選択
+    const lane = Math.floor(Math.random() * totalLanes);
 
-        // オブジェクトの生成
-        const object = document.createElement('img');
-        const random = Math.random();
-        if (random < 0.0005) { // 0.05%でとりを生成
-            object.src = 'hazime.png';
-            object.dataset.type = 'bird'; // とりを判別するデータ属性
-        } else if (random < 0.2) { // 20%で虫を生成
-            object.src = 'musi.png';
-            object.dataset.type = 'bug'; // 虫
-        } else {
-            object.src = 'ringo.png'; // リンゴ
-            object.dataset.type = 'apple'; // リンゴ
-        }
-
-        object.className = 'falling-object';
-        object.style.left = `${lane * laneWidth + laneWidth / 2 - 1.5}%`; // サイズ小変更に合わせて調整
-        object.style.animationDuration = `${fallSpeed}s`; // 落下速度を反映
-        gameArea.appendChild(object);
-
-        object.addEventListener('animationend', () => {
-            gameArea.removeChild(object);
-        });
-
-        // 衝突判定
-        const collisionInterval = setInterval(() => {
-            const objectRect = object.getBoundingClientRect();
-            const basketRect = basket.getBoundingClientRect();
-            if (
-                objectRect.bottom >= basketRect.top &&
-                objectRect.left <= basketRect.right &&
-                objectRect.right >= basketRect.left
-            ) {
-                clearInterval(collisionInterval);
-                gameArea.removeChild(object);
-
-                if (object.dataset.type === 'bug') {
-                    handleBasketHit('damezi.png'); // 虫に当たった場合の処理
-                    score = Math.max(0, score - 5);
-                } else if (object.dataset.type === 'bird') {
-                    handleBasketHit('hosome.png'); // とりに当たった場合の処理
-                    score += 100;
-                } else {
-                    score += 10; // リンゴ
-                }
-                updateScore();
-            }
-        }, 50);
+    // オブジェクトの生成
+    const object = document.createElement('img');
+    const random = Math.random();
+    if (random < 0.0005) { // 0.05%でとりを生成
+        object.src = 'hazime.png';
+        object.dataset.type = 'bird'; // とりを判別するデータ属性
+    } else if (random < 0.2) { // 20%で虫を生成
+        object.src = 'musi.png';
+        object.dataset.type = 'bug'; // 虫
+    } else {
+        object.src = 'ringo.png'; // リンゴ
+        object.dataset.type = 'apple'; // リンゴ
     }
 
+    object.className = 'falling-object';
+    object.style.left = `${lane * laneWidth + laneWidth / 2 - 1.5}%`; // サイズ小変更に合わせて調整
+    object.style.animationDuration = `${fallSpeed}s`; // 落下速度を反映
+    gameArea.appendChild(object);
+
+    object.addEventListener('animationend', () => {
+        if (gameArea.contains(object)) {
+            gameArea.removeChild(object);
+        }
+    });
+
+    // 衝突判定
+    const collisionInterval = setInterval(() => {
+        const objectRect = object.getBoundingClientRect();
+        const basketRect = basket.getBoundingClientRect();
+        if (
+            objectRect.bottom >= basketRect.top &&
+            objectRect.left <= basketRect.right &&
+            objectRect.right >= basketRect.left
+        ) {
+            clearInterval(collisionInterval);
+            if (gameArea.contains(object)) {
+                gameArea.removeChild(object);
+            }
+
+            if (object.dataset.type === 'bug') {
+                handleBasketHit('damezi.png'); // 虫に当たった場合の処理
+                score = Math.max(0, score - 5);
+            } else if (object.dataset.type === 'bird') {
+                handleBasketHit('hosome.png'); // とりに当たった場合の処理
+                score += 100;
+            } else {
+                score += 10; // リンゴ
+            }
+            updateScore();
+        }
+    }, 50);
+}
     function handleBasketHit(image) {
         if (isRevertingBasket) return; // すでに戻る途中なら何もしない
         isRevertingBasket = true;
